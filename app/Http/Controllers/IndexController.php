@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use DB;
 
 class IndexController extends Controller
 {
@@ -36,6 +37,12 @@ class IndexController extends Controller
                     'color' => 'success'
             ]
     ];
+
+    $user = DB::table('user')
+            ->select()
+            ->where('login', '=', $login)
+            ->first();
+    $data['mesCouilles'] = "Lourd";
     return view('index')->with($data);
   }
 }
