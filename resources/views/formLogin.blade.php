@@ -2,7 +2,6 @@
 
 @section('content')
 
- /* A compléter */
 {!! Form::open(['url' => 'signIn']) !!}
 <div class="col-md-12 well well-md">
     <center><h1>Authentification</h1></center>
@@ -30,5 +29,5 @@
     </div>
 </div>
 {!! Form::close() !!}
- /* A compléter */
+
  @endsection

@@ -47,7 +47,7 @@ Route::get('oeuvres', function () {
 
 Route::get('test', 'IndexController@index');
 
-
+Route::post('addOeuvre', 'OeuvreController@addOeuvre');
 
 Route::post('signIn', 'UtilisateurController@signIn');
 Route::get('/signOut', 'UtilisateurController@signOut');

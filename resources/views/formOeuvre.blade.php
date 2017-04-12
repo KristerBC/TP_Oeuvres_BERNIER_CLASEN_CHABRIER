@@ -1,9 +1,7 @@
 @extends('admin_template')
 
 @section('content')
-
- /* A compléter */
- /* A compléter */
+{!! Form::open(['url' => 'addOeuvre']) !!}
 <div class="col-md-12 well well-sm">
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">
@@ -12,7 +10,7 @@
             <label class="col-md-3 control-label">Titre : </label>
             <div class="col-md-3">
                 <input type="text" name="titre"
-                    value=" /* A compléter */" class="form-control" required autofocus>
+                    placeholder="..." value="" class="form-control" required autofocus>
             </div>
         </div>
         <div class="form-group">
@@ -27,7 +25,7 @@
         <div class="form-group">
             <label class="col-md-3 control-label">Prix : </label>
             <div class="col-md-3">
-                <input type="text" name="prix" value=" /* A compléter */" class="form-control"  required>
+                <input type="text" name="prix" value="" placeholder="..." class="form-control"  required>
             </div>
         </div>
         <div class="form-group">
@@ -43,10 +41,9 @@
             </div>
         </div>
         <div class="col-md-6 col-md-offset-3">
-             /* A compléter */
+             @include('success')
         </div>
     </div>
 </div>
- /* A compléter */
- /* A compléter */
+{!! Form::close() !!}
  @endsection
