@@ -1,8 +1,8 @@
  /* A compléter */
- /* A compléter */  
+ /* A compléter */
 <div class="col-md-12 well well-md">
     <center><h1>Authentification</h1></center>
-    <div class="form-horizontal">    
+    <div class="form-horizontal">
         <div class="form-group">
             <label class="col-md-3 control-label">Identifiant : </label>
             <div class="col-md-6  col-md-3">
@@ -27,4 +27,3 @@
 </div>
  /* A compléter */
  /* A compléter */
-
