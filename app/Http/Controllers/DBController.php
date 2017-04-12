@@ -12,7 +12,7 @@ class DBController extends Controller
     public __construct()
     {
       try {
-        $this->db = new PDO('mysql:host=kristoffers.com;dbname=TPOeuvres', "TPOeuvres", "zTVwp9cPnhAZjrjA");
+        $this->db = new PDO('mysql:host=kristoffers.com;dbname=oeuvres', "TPOeuvres", "zTVwp9cPnhAZjrjA");
       } catch (PDOException $e) {
           print "Erreur !: " . $e->getMessage() . "<br/>";
           die();

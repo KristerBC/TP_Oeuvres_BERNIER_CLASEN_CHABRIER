@@ -1,3 +1,7 @@
+@extends('admin_template')
+
+@section('content')
+
  /* A compléter */
  /* A compléter */
 <div class="col-md-12 well well-md">
@@ -27,3 +31,4 @@
 </div>
  /* A compléter */
  /* A compléter */
+ @endsection

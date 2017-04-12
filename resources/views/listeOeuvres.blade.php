@@ -1,3 +1,7 @@
+@extends('admin_template')
+
+@section('content')
+
  /* A compléter */
 <div class="container">
     <div class="blanc">
@@ -15,13 +19,13 @@
             </tr>
         </thead>
          /* A compléter */
-        <tr>   
+        <tr>
             <td>  /* A compléter */ </td>
             <td>  /* A compléter */ </td>
             <td>  /* A compléter */ </td>
             <td style="text-align:center;"><a href=" /* A compléter */">
                 <span class="glyphicon glyphicon-book" data-toggle="tooltip" data-placement="top" title="Réserver"></span></a>
-            </td>            
+            </td>
             <td style="text-align:center;"><a href=" /* A compléter */">
                 <span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Modifier"></span></a>
             </td>
@@ -30,13 +34,14 @@
                     onclick="javascript:if (confirm('Suppression confirmée ?'))
                         { window.location=' /* A compléter */';}">
                 </a>
-            </td>                    
+            </td>
         </tr>
          /* A compléter */
         <BR> <BR>
     </table>
     <div class="col-md-6 col-md-offset-3">
          /* A compléter */
-    </div> 
+    </div>
 </div>
  /* A compléter */
+  @endsection

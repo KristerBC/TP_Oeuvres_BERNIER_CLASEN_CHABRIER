@@ -24,4 +24,25 @@ Route::get('home', function () {
     return view('home');
 });
 
+Route::get('login', function () {
+    return view('formLogin');
+});
+
+Route::get('formOeuvre', function () {
+    return view('formOeuvre');
+});
+
+Route::get('formReservation', function () {
+    return view('formReservation');
+});
+
+Route::get('reservations', function () {
+    return view('listReservations');
+});
+
+Route::get('oeuvres', function () {
+    return view('listOeuvres');
+});
+
+
 Route::get('test', 'IndexController@index');
