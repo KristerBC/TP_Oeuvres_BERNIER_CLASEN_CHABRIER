@@ -44,14 +44,6 @@ Route::get('oeuvres', function () {
     return view('listeOeuvres');
 });
 
-Route::get('getAllOeuvres', function() {
-  //{!! DB::table('oeuvre')->select('*')->get() !!}
-  $result = "[[1,'Anton', 'hej@gmail.com', '2011/04/04', '2011/02/02'], [2,'beta', 'bhej@gmail.com', '3011/04/04', '1011/02/02']]";
-  return $result;
-});
-
-Route::get('test', 'IndexController@index');
-
 Route::post('addOeuvre', 'OeuvreController@addOeuvre');
 
 Route::post('signIn', 'UtilisateurController@signIn');

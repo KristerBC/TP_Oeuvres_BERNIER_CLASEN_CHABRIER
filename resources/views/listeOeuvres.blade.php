@@ -58,14 +58,15 @@
 
 @push('scripts')
   <script>
-  var data = {!! json_encode(DB::table('oeuvre')->select('*')->get()) !!};
+  var data = {!! json_encode(DB::table('oeuvre')->join('proprietaire', 'oeuvre.id_proprietaire', '=', 'proprietaire.id_proprietaire')->select('*')->get()) !!};
   var arr = new Array();
   for(elm in data)
   {
     arr.push(new Array(
-      data[elm].id_proprietaire,
-      data[elm].prix,
       data[elm].titre,
+      data[elm].prenom_proprietaire,
+      data[elm].nom_proprietaire,
+      data[elm].prix,
       '<span class="glyphicon glyphicon-book" data-toggle="tooltip" data-placement="top" title="Réserver"></span></a>',
       '<span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Modifier"></span></a>',
       '<a class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Supprimer" href="#" onclick="javascript:if (confirm(\'Suppression confirmée ?\')) { window.location=\'google.dk\';}"></a>'

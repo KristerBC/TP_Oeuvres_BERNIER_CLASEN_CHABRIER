@@ -14,7 +14,7 @@ class OeuvreController extends Controller
   public function addOeuvre() {
    DB::table('oeuvre')->insert([
       "id_oeuvre" => DB::table("oeuvre")->count()+1,
-      "id_proprietaire" => Session::get('id'),
+      "id_proprietaire" => Request::input('cbProprietaire'),
       "titre" => Request::input('titre'),
       "prix" => Request::input('prix'),
     ]);
@@ -24,5 +24,10 @@ class OeuvreController extends Controller
 
   public function listOeuvres() {
     return Datatables::of(User::query())->make(true);
+  }
+
+
+  public function getAllOeuvres() {
+    return json_encode(DB::table('oeuvre')->select('*')->get());
   }
 }

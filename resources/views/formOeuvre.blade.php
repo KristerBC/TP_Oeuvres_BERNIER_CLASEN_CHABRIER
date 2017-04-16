@@ -17,8 +17,10 @@
             <label class="col-md-3 control-label">Proprietaire : </label>
             <div class="col-md-3">
                 <select class='form-control' name='cbProprietaire' required>
-                    <OPTION VALUE=0>Sélectionner un proprietaire</option>
-                     /* A compléter */
+                    <option VALUE=0>Sélectionner un proprietaire</option>
+                    @foreach (DB::table('proprietaire')->select('*')->get() as $proprietaire)
+                      <option value="{{ $proprietaire->id_proprietaire }}">{{ $proprietaire->nom_proprietaire }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
