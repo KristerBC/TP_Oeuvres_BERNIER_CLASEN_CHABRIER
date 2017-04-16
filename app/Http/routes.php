@@ -45,6 +45,7 @@ Route::get('oeuvres', function () {
 });
 
 Route::post('addOeuvre', 'OeuvreController@addOeuvre');
+Route::post('addReservation', 'ReservationController@addReservation');
 
 Route::post('signIn', 'UtilisateurController@signIn');
 Route::get('/signOut', 'UtilisateurController@signOut');
