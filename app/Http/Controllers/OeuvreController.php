@@ -31,7 +31,10 @@ class OeuvreController extends Controller
     return json_encode(DB::table('oeuvre')->select('*')->get());
   }
 
-  public function deleteOeuvre($idOeuvre) {
-    return "hej";
+  public function deleteOeuvre() {
+    $titre = DB::table('oeuvre')->where('id_oeuvre', Request::input('id_oeuvre'))->value('titre');
+    DB::table('oeuvre')->where('id_oeuvre', Request::input('id_oeuvre'))->delete();
+    $success = $titre . " supprimé";
+    return view('listeOeuvres', compact('success'));
   }
 }

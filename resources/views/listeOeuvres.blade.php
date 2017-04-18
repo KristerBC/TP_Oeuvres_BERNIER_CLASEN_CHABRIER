@@ -114,7 +114,7 @@
                     <label class="col-md-offset-1 col-md-3 control-label">Titre : </label>
                     <div class="col-md-5">
                         <select class='form-control' name='id_oeuvre' required>
-                            <OPTION VALUE=0>Sélectionner un oeuvre</option>
+                            <option VALUE=0>Sélectionner un oeuvre</option>
                               @foreach (DB::table('oeuvre')->select('*')->get() as $oeuvre)
                                 <option value="{{ $oeuvre->id_oeuvre }}">{{ $oeuvre->titre }}</option>
                               @endforeach
@@ -163,9 +163,9 @@
           <!-- /.modal-dialog -->
         </div>
       <!-- /.modal -->
-
 <div class="container">
   <div class="blanc">
+    @include('success')
       <h1>Liste des oeuvres</h1>
   </div>
   <div class="box box-primary">
@@ -223,8 +223,7 @@
 
   function deleteOeuvre()
   {
-    console.log(saved_oeuvreId);
-    {{ action('deleteOeuvre') }}
+    window.location = "deleteOeuvre?id_oeuvre=" + saved_oeuvreId;
   }
 
   function setSavedOeuvreId(id){saved_oeuvreId = id;}
