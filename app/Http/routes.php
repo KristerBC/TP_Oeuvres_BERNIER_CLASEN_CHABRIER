@@ -44,6 +44,10 @@ Route::get('oeuvres', function () {
     return view('listeOeuvres');
 });
 
+Route::get('deleteOeuvre', 'OeuvreController@deleteOeuvre');
+
+
+
 Route::post('addOeuvre', 'OeuvreController@addOeuvre');
 Route::post('addReservation', 'ReservationController@addReservation');
 

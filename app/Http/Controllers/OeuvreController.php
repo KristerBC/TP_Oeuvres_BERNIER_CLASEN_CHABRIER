@@ -30,4 +30,8 @@ class OeuvreController extends Controller
   public function getAllOeuvres() {
     return json_encode(DB::table('oeuvre')->select('*')->get());
   }
+
+  public function deleteOeuvre($idOeuvre) {
+    return "hej";
+  }
 }
