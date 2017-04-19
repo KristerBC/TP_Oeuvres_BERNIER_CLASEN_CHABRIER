@@ -23,4 +23,17 @@ class ReservationController extends Controller
     $success = "Oeuvre réservé";
     return view("listeOeuvres", compact('success'));
   }
+
+  public function confirmReservation() {
+    DB::table('reservation')
+            ->where([
+            ['id_oeuvre', '=', Request::input('id_oeuvre')],
+            ['date_reservation', '=', Request::input('date_reservation')],
+        ])
+            ->update([
+              'statut' => "Confirmée",
+            ]);
+    $success = "Reservation confirmée";
+    return view('listeReservations', compact('success'));
+  }
 }

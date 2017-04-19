@@ -3,9 +3,6 @@
 @extends('admin_template')
 
 @section('content')
-
- /* A compléter */
-
     <!-- modal-deleteOeuvre -->
 
       <div class="modal" id="modalDeleteOeuvre" role="dialog">
