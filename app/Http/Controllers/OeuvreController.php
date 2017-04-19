@@ -49,4 +49,16 @@ class OeuvreController extends Controller
     $success = Request::input('titre') . " modifié";
     return view('listeOeuvres', compact('success'));
   }
+
+  public function modifyOeuvre() {
+    DB::table('oeuvre')
+            ->where('id_oeuvre', Request::input('id_oeuvre'))
+            ->update([
+              'id_proprietaire' => Request::input('cbProprietaire'),
+              'titre' => Request::input('titre'),
+              'prix' => Request::input('prix')
+            ]);
+    $success = Request::input('titre') . " modifié";
+    return view('listeOeuvres', compact('success'));
+  }
 }

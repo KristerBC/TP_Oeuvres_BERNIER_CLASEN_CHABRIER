@@ -107,11 +107,16 @@
             </div>
 
             <div clas="modal-body">
-              {!! Form::open(['url' => 'modifyOeuvre']) !!}
+              {!! Form::open(['url' => 'addReservation']) !!}
               <div class="form-horizontal">
                 <div class="form-group">
-                    <!--<input type="hidden" name="id_oeuvre" value=" /* A compléter */"/>-->
-                    <label class="col-md-offset-1 col-md-3 control-label">Titre : </label>
+                    <input type="hidden" id="book_idOeuvre" name="id_oeuvre" value=""/>
+                    <label class="col-md-offset-1 col-md-3 control-label">Titre :</label>
+                    <div class="col-md-5 input-group">
+                      <div class="input-group-addon">
+                        <span id="book_titre"></span>
+                      </div>
+                    </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-offset-1 col-md-3 control-label">Date range:</label>
@@ -120,7 +125,7 @@
                     <div class="input-group-addon">
                       <i class="fa fa-calendar"></i>
                     </div>
-                    <input type="text" class="form-control pull-right" id="reservation">
+                    <input type="text" class="form-control pull-right" name="date_reservation" id="reservation">
                   </div>
                   <!-- /.input group -->
                 </div>
@@ -141,7 +146,7 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default " data-dismiss="modal">Annuler</button>
-              <button  id="bookBtn" type="button" class="btn btn-primary pull-left" data-id="" onclick="bookOeuvre()">Réserver</button>
+              <button  id="bookBtn" type="submit" class="btn btn-primary pull-left" data-id="" onclick="bookOeuvre()">Réserver</button>
             </div>
             {!! Form::close() !!}
           </div>
@@ -189,7 +194,7 @@
 
 @push('scripts')
   <script>
-
+$('#reservation').datepicker();
   var saved_oeuvreId;
   var data = {!! json_encode(DB::table('oeuvre')->join('proprietaire', 'oeuvre.id_proprietaire', '=', 'proprietaire.id_proprietaire')->select('*')->get()) !!};
   var arr = new Array();
@@ -200,7 +205,7 @@
       data[elm].prenom_proprietaire,
       data[elm].nom_proprietaire,
       data[elm].prix,
-      '<span class="glyphicon glyphicon-book" onclick="setSavedOeuvreId(' + data[elm].id_oeuvre + ')" data-toggle="modal" data-target="#modalBookOeuvre" title="Réserver"></span></a>',
+      '<span class="glyphicon glyphicon-book" onclick="openOeuvreBooker(\'' + data[elm].id_oeuvre + '\', \'' + data[elm].id_proprietaire + '\', \'' + data[elm].titre + '\', \'' + data[elm].prix + '\')" data-toggle="modal" data-target="#modalBookOeuvre" title="Réserver"></span></a>',
       '<span class="glyphicon glyphicon-pencil" onclick="openOeuvreModifier(\'' + data[elm].id_oeuvre + '\', \'' + data[elm].id_proprietaire + '\', \'' + data[elm].titre + '\', \'' + data[elm].prix + '\')" data-toggle="modal" data-target="#modalModifyOeuvre" data-placement="top" title="Modifier"></span></a>',
       '<a class="glyphicon glyphicon-trash" onclick="setSavedOeuvreId(' + data[elm].id_oeuvre + ')" data-toggle="modal" data-target="#modalDeleteOeuvre" data-placement="top" title="Supprimer" href="#"></a>'
     ));
@@ -216,6 +221,16 @@
     document.getElementById("modify_idOeuvre").value = saved_oeuvreId;
     document.getElementById("modify_titre").value = titre;
     document.getElementById("modify_prix").value = prix;
+    var select = document.getElementById("modify_idProprietaire");
+    select.value = id_proprietaire;
+  }
+
+  function openOeuvreBooker(id_oeuvre, id_proprietaire, titre, prix)
+  {
+    setSavedOeuvreId(id_oeuvre);
+    console.log(titre);
+    document.getElementById("book_idOeuvre").value = saved_oeuvreId;
+    document.getElementById("book_titre").innerHTML = titre;
     var select = document.getElementById("modify_idProprietaire");
     select.value = id_proprietaire;
   }

@@ -24,7 +24,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
     <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="../../plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="{{ asset ("/bower_components/AdminLTE/plugins/daterangepicker/daterangepicker.css") }}">
+    <link rel="stylesheet" href="{{ asset ("/bower_components/AdminLTE/plugins/datepicker/datepicker3.css") }}">
     <link href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -72,7 +73,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset ("/bower_components/AdminLTE/dist/js/app.min.js") }}" type="text/javascript"></script>
 <!-- bootstrap datepicker -->
+<script src="{{ asset ("/bower_components/AdminLTE/plugins/moment.min.js") }}"></script>
 <script src="{{ asset ("/bower_components/AdminLTE/plugins/datepicker/bootstrap-datepicker.js") }}"></script>
+<!-- bootstrap daterangepicker -->
+<script src="{{ asset ("/bower_components/AdminLTE/plugins/daterangepicker/daterangepicker.js") }}"></script>
 <!-- DataTables -->
 <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
