@@ -49,44 +49,41 @@
             </div>
 
             <div clas="modal-body">
-              <div class="form-horizontal">
-                <div class="form-group">
-                    <input type="hidden" name="id_oeuvre" value=" /* A compléter */"/>
-                    <label class="col-md-offset-1 col-md-3 control-label">Titre : </label>
-                    <div class="col-md-5">
-                        <input type="text" name="titre"
-                            placeholder="..." value="" class="form-control" required autofocus>
-                    </div>
+              {!! Form::open(['url' => 'modifyOeuvre']) !!}
+                <div class="form-horizontal">
+                  <div class="form-group">
+                      <input type="hidden" id="modify_idOeuvre" name="id_oeuvre" value=""/>
+                      <label class="col-md-offset-1 col-md-3 control-label">Titre : </label>
+                      <div class="col-md-5">
+                          <input type="text" id="modify_titre" name="titre"
+                              placeholder="..." value="" class="form-control" required autofocus>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-md-offset-1 col-md-3 control-label">Proprietaire : </label>
+                      <div class="col-md-5">
+                          <select class='form-control' id="modify_idProprietaire" name='cbProprietaire' required>
+                              <option VALUE=0>Sélectionner un proprietaire</option>
+                              @foreach (DB::table('proprietaire')->select('*')->get() as $proprietaire)
+                                <option value="{{ $proprietaire->id_proprietaire }}">{{ $proprietaire->nom_proprietaire }}</option>
+                              @endforeach
+                          </select>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-md-offset-1 col-md-3 control-label">Prix : </label>
+                      <div class="col-md-5">
+                          <input type="text" id="modify_prix" name="prix" value="" placeholder="..." class="form-control"  required>
+                      </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-md-offset-1 col-md-3 control-label">Proprietaire : </label>
-                    <div class="col-md-5">
-                        <select class='form-control' name='cbProprietaire' required>
-                            <option VALUE=0>Sélectionner un proprietaire</option>
-                            @foreach (DB::table('proprietaire')->select('*')->get() as $proprietaire)
-                              <option value="{{ $proprietaire->id_proprietaire }}">{{ $proprietaire->nom_proprietaire }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-offset-1 col-md-3 control-label">Prix : </label>
-                    <div class="col-md-5">
-                        <input type="text" name="prix" value="" placeholder="..." class="form-control"  required>
-                    </div>
-                </div>
-                <div class="col-md-6 col-md-offset-3">
-                     @include('success')
-                </div>
-              </div>
-
             </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default " data-dismiss="modal">Annuler</button>
-              <button  id="modifyBtn" type="button" class="btn btn-primary pull-left" data-id="" onclick="modifyOeuvre()">Modifier</button>
+              <button type="submit" class="btn btn-primary pull-left" data-id="">Modifier</button>
             </div>
-
+              {!! Form::close() !!}
           </div>
 
             <!-- /.modal-content -->
@@ -110,18 +107,11 @@
             </div>
 
             <div clas="modal-body">
+              {!! Form::open(['url' => 'modifyOeuvre']) !!}
               <div class="form-horizontal">
                 <div class="form-group">
                     <!--<input type="hidden" name="id_oeuvre" value=" /* A compléter */"/>-->
                     <label class="col-md-offset-1 col-md-3 control-label">Titre : </label>
-                    <div class="col-md-5">
-                        <select class='form-control' name='id_oeuvre' required>
-                            <option VALUE=0>Sélectionner un oeuvre</option>
-                              @foreach (DB::table('oeuvre')->select('*')->get() as $oeuvre)
-                                <option value="{{ $oeuvre->id_oeuvre }}">{{ $oeuvre->titre }}</option>
-                              @endforeach
-                        </select>
-                    </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-offset-1 col-md-3 control-label">Date range:</label>
@@ -145,10 +135,6 @@
                         </select>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-md-offset-3">
-                    @include('success')
-                </div>
             </div>
 
             </div>
@@ -157,7 +143,7 @@
               <button type="button" class="btn btn-default " data-dismiss="modal">Annuler</button>
               <button  id="bookBtn" type="button" class="btn btn-primary pull-left" data-id="" onclick="bookOeuvre()">Réserver</button>
             </div>
-
+            {!! Form::close() !!}
           </div>
 
             <!-- /.modal-content -->
@@ -215,13 +201,24 @@
       data[elm].nom_proprietaire,
       data[elm].prix,
       '<span class="glyphicon glyphicon-book" onclick="setSavedOeuvreId(' + data[elm].id_oeuvre + ')" data-toggle="modal" data-target="#modalBookOeuvre" title="Réserver"></span></a>',
-      '<span class="glyphicon glyphicon-pencil" onclick="setSavedOeuvreId(' + data[elm].id_oeuvre + ')" data-toggle="modal" data-target="#modalModifyOeuvre" data-placement="top" title="Modifier"></span></a>',
+      '<span class="glyphicon glyphicon-pencil" onclick="openOeuvreModifier(\'' + data[elm].id_oeuvre + '\', \'' + data[elm].id_proprietaire + '\', \'' + data[elm].titre + '\', \'' + data[elm].prix + '\')" data-toggle="modal" data-target="#modalModifyOeuvre" data-placement="top" title="Modifier"></span></a>',
       '<a class="glyphicon glyphicon-trash" onclick="setSavedOeuvreId(' + data[elm].id_oeuvre + ')" data-toggle="modal" data-target="#modalDeleteOeuvre" data-placement="top" title="Supprimer" href="#"></a>'
     ));
   };
   $('#tableOeuvre').DataTable({
     data: arr
   });
+
+  function openOeuvreModifier(id_oeuvre, id_proprietaire, titre, prix)
+  {
+    setSavedOeuvreId(id_oeuvre);
+    console.log(titre);
+    document.getElementById("modify_idOeuvre").value = saved_oeuvreId;
+    document.getElementById("modify_titre").value = titre;
+    document.getElementById("modify_prix").value = prix;
+    var select = document.getElementById("modify_idProprietaire");
+    select.value = id_proprietaire;
+  }
 
   function deleteOeuvre()
   {

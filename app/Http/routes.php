@@ -86,6 +86,7 @@ Route::get('deleteOeuvre', 'OeuvreController@deleteOeuvre');
 
 Route::post('addOeuvre', 'OeuvreController@addOeuvre');
 Route::post('addReservation', 'ReservationController@addReservation');
+Route::post('modifyOeuvre', 'OeuvreController@modifyOeuvre');
 
 Route::post('signIn', 'UtilisateurController@signIn');
 Route::get('/signOut', 'UtilisateurController@signOut');
