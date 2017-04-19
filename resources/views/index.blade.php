@@ -22,7 +22,7 @@
                             <div class="progress-bar progress-bar-{{$task['color']}}" style="width: {{$task['progress']}}%"></div>
                         </div>
                     @endforeach
-                    {{ $mesCouilles }}
+                    {{ $test }}
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                     <form action='#'>

@@ -10,33 +10,25 @@
                 <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>Alexander Pierce</p> <!-- replace with the user's name -->
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
-
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-<span class="input-group-btn">
-  <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-</span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
+            <li class="header">Menu</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="home"><span>Home</span></a></li>
-            <li><a href="login"><span>Login</span></a></li>
-            <li><a href="reservations"><span>Reservation</span></a></li>
+            @if (Session::get('id')==0)
+            <li class="active"><a href="login"><span>Se connecter</span></a></li>
+            @endif
+            
+            @if (Session::get('id')>0)
+            <li class="active"><a href="home"><span>Accueil</span></a></li>
+            <li><a href="reservations"><span>Reservations</span></a></li>
             <li><a href="oeuvres"><span>Oeuvres</span></a></li>
-            <li><a href="formOeuvre"><span>formOeuvre</span></a></li>
-            <li><a href="formReservation"><span>formReservation</span></a></li>
+            <li><a href="formOeuvre"><span>Ajouter une oeuvre</span></a></li>
+            @endif
             <!--<li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

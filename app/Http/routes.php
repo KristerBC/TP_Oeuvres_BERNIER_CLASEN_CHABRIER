@@ -12,16 +12,31 @@
 */
 
 Route::get('/', function () {
+	if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
     return view('admin_template');
+	}
 });
 
 
 Route::get('admin', function () {
+	if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
     return view('admin_template');
+	}
 });
 
 Route::get('home', function () {
+	if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
     return view('home');
+	}
 });
 
 Route::get('login', function () {
@@ -29,19 +44,40 @@ Route::get('login', function () {
 });
 
 Route::get('formOeuvre', function () {
+	if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
     return view('formOeuvre');
+	}
 });
 
 Route::get('formReservation', function () {
+    if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
     return view('formReservation');
+	}
 });
 
 Route::get('reservations', function () {
+    if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
     return view('listeReservations');
+	}
 });
 
 Route::get('oeuvres', function () {
+	if (Session::get('id')==0){
+		return view('formLogin');
+	}
+	else{
+
     return view('listeOeuvres');
+	}
 });
 
 Route::get('deleteOeuvre', 'OeuvreController@deleteOeuvre');

@@ -41,6 +41,6 @@ class UtilisateurController extends Controller
     public function signOut() {
       $utilisateur = new Utilisateur();
       $utilisateur->logout();
-      return view('home');
+      return view('formLogin');
     }
 }

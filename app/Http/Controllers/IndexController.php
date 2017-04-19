@@ -42,7 +42,7 @@ class IndexController extends Controller
             ->select()
             ->where('login', '=', $login)
             ->first();
-    $data['mesCouilles'] = "Lourd";
+    $data['test'] = "Lourd";
     return view('index')->with($data);
   }
 }
