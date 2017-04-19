@@ -27,6 +27,8 @@ class Utilisateur extends Model
         // Si le mdp saisi est identique au mdp enregistré
         if($user->pwd == $pwd) {
           Session::put('id', $user->id_proprietaire);
+          Session::put('nom', $user->nom_proprietaire);
+          Session::put('prenom', $user->prenom_proprietaire);
           $connected = true;
         }
       }
@@ -39,5 +41,7 @@ class Utilisateur extends Model
     */
     public function logout() {
       Session::forget('id');
+      Session::forget('nom');
+      Session::forget('prenom');
     }
 }

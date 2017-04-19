@@ -2,7 +2,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo"><b>Admin</b>LTE</a>
+    <a href="index2.html" class="logo"><b>Oeuvres</b>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -17,7 +17,9 @@
                 <li class="user user-menu">
                     <!-- Menu Toggle Button -->
                     <a href="{{url('/signOut')}}">
+                      @if (Session::get('id')!=0)
                         <span class="hidden-xs">Déconnexion</span>
+                      @endif
                     </a>
                     </ul>
                 </li>
