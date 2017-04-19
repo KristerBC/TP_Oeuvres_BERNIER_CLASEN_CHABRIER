@@ -82,6 +82,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience -->
+<script>
+function changePage(buttonId)
+{
+  var sideMenu = document.getElementById("sideMenu");
+  var buttons = sideMenu.getElementsByTagName("li");
+  for(index in buttons)
+  {
+    var button = buttons[index];
+    if(typeof button != "object"){continue;}
+    console.log(button.id);
+    button.className = button.className.replace("active", "");
+    if(button.id == buttonId)
+    {
+      button.className+= " active";
+    }
+  }
+}
+</script>
       @stack('scripts')
 </body>
 </html>

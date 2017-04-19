@@ -91,5 +91,6 @@
   {
     window.location = "deleteOeuvre?id_reservation=" + saved_reservationId;
   }
+  changePage('menuButton_reservations');
   </script>
   @endpush

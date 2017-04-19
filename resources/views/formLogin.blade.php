@@ -31,3 +31,8 @@
 {!! Form::close() !!}
 
  @endsection
+@push('scripts')
+<script>
+ changePage('menuButton_formLogin');
+ </script>
+ @endpush

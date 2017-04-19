@@ -21,16 +21,16 @@
 
         </div>
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu" id="sideMenu">
             <li class="header">Menu</li>
             <!-- Optionally, you can add icons to the links -->
             @if (Session::get('id')==0)
-              <li class="active"><a href="login"><span>Se connecter</span></a></li>
+              <li id="menuButton_formLogin" class="active"><a href="login"><span>Se connecter</span></a></li>
             @else
-              <li class="active"><a href="home"><span>Accueil</span></a></li>
-              <li><a href="reservations"><span>Reservations</span></a></li>
-              <li><a href="oeuvres"><span>Oeuvres</span></a></li>
-              <li><a href="formOeuvre"><span>Ajouter une oeuvre</span></a></li>
+              <li id="menuButton_home" class="active"><a href="home"><span>Accueil</span></a></li>
+              <li id="menuButton_reservations"><a href="reservations"><span>Reservations</span></a></li>
+              <li id="menuButton_oeuvres"><a href="oeuvres"><span>Oeuvres</span></a></li>
+              <li id="menuButton_formOeuvre"><a href="formOeuvre"><span>Ajouter une oeuvre</span></a></li>
             @endif
             <!--<li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>

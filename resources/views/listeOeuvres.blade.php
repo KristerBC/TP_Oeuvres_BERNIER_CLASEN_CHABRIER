@@ -240,6 +240,6 @@ $('#reservation').datepicker();
   function setSavedOeuvreId(id){saved_oeuvreId = id;}
 
   function getSavedOeuvreId(){return saved_oeuvreId};
-
+changePage('menuButton_oeuvres');
   </script>
 @endpush
