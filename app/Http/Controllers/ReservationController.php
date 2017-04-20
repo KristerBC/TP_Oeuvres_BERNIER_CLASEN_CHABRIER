@@ -12,8 +12,7 @@ class ReservationController extends Controller
 {
   public function addReservation() {
     $date = explode("/", Request::input('date_reservation'));
-    $date = $date[2] . "-" . $date[1] . "-" . $date[0] . " 00:00:00";
-
+    $date = $date[2] . "-" . $date[0] . "-" . $date[1] . " 00:00:00";
     DB::table('reservation')->insert([
       "date_reservation" => $date,
       "id_oeuvre" => Request::input('id_oeuvre'),
