@@ -78,7 +78,7 @@
       data[elm].prenom_adherent,
       data[elm].nom_adherent,
       '<a href="confirmReservation?id_oeuvre='+data[elm].id_oeuvre+'&date_reservation='+data[elm].date_reservation+'"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Confirmer"></span></a>',
-      '<a class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Supprimer" href="#" data-toggle="modal" data-target="#modalDeleteReservation" data-placement="top" onclick="setSavedReservationId(' + data[elm].id_oeuvre + ')"></a>'
+      '<a class="glyphicon glyphicon-trash" data-toggle="modal" data-placement="top" title="Supprimer" href="#" data-toggle="modal" data-target="#modalDeleteReservation" data-placement="top" onclick="setSavedReservationId(' + data[elm].id_oeuvre + ')"></a>'
     ));
   };
 
