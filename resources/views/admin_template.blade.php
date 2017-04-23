@@ -91,7 +91,6 @@ function changePage(buttonId)
   {
     var button = buttons[index];
     if(typeof button != "object"){continue;}
-    console.log(button.id);
     button.className = button.className.replace("active", "");
     if(button.id == buttonId)
     {

@@ -83,6 +83,7 @@ Route::get('oeuvres', function () {
 Route::get('deleteOeuvre', 'OeuvreController@deleteOeuvre');
 
 Route::get('confirmReservation', 'ReservationController@confirmReservation');
+Route::get('deleteReservation', 'ReservationController@deleteReservation');
 
 Route::post('addOeuvre', 'OeuvreController@addOeuvre');
 Route::post('addReservation', 'ReservationController@addReservation');

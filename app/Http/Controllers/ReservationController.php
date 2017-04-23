@@ -35,4 +35,15 @@ class ReservationController extends Controller
     $success = "Reservation confirmée";
     return view('listeReservations', compact('success'));
   }
+
+  public function deleteReservation() {
+    DB::table('reservation')
+            ->where([
+            ['id_oeuvre', '=', Request::input('id_oeuvre')],
+            ['date_reservation', '=', Request::input('date_reservation')],
+        ])
+            ->delete();
+    $success = "Reservation confirmée";
+    return view('listeReservations', compact('success'));
+  }
 }
