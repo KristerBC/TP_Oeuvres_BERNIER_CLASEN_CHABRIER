@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-        Anything you want
+        ISI 2 - Professeur : Alain Arsanne 
     </div>
     <!-- Default to the left -->
-    <strong>Copyright © 2015 <a href="#">Company</a>.</strong> All rights reserved.
+    2017 -- Projet réalisé par : <strong> BERNIER Maxence - CLASEN Kristoffer - CHABRIER Valentin.</strong> 
 </footer>

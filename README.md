@@ -1,27 +1,60 @@
-# Laravel PHP Framework
+ d888b  d88888b .d8888. d888888b d888888b  .d88b.  d8b   db    .d88b.  d88888b db    db db    db d8888b. d88888b .d8888.   d888888b .d8888. d888888b .d888b.
+88' Y8b 88'     88'  YP `~~88~~'   `88'   .8P  Y8. 888o  88   .8P  Y8. 88'     88    88 88    88 88  `8D 88'     88'  YP     `88'   88'  YP   `88'   VP  `8D
+88      88ooooo `8bo.      88       88    88    88 88V8o 88   88    88 88ooooo 88    88 Y8    8P 88oobY' 88ooooo `8bo.        88    `8bo.      88       odD'
+88  ooo 88~~~~~   `Y8b.    88       88    88    88 88 V8o88   88    88 88~~~~~ 88    88 `8b  d8' 88`8b   88~~~~~   `Y8b.      88      `Y8b.    88     .88'  
+88. ~8~ 88.     db   8D    88      .88.   `8b  d8' 88  V888   `8b  d8' 88.     88b  d88  `8bd8'  88 `88. 88.     db   8D     .88.   db   8D   .88.   j88.   
+ Y888P  Y88888P `8888Y'    YP    Y888888P  `Y88P'  VP   V8P    `Y88P'  Y88888P ~Y8888P'    YP    88   YD Y88888P `8888Y'   Y888888P `8888Y' Y888888P 888888D
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Installation : 
 
-## Security Vulnerabilities
+Cloner le projet puis y ajouter le dossier Vendor de Laravel. 
+Créer la base de données grâce au script .sql fournit.
+Changer les paramètres de connexion à la base de données dans le fichier .env à la racine du projet. 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+Fonctionnalités :
+
+L'ensemble des points bonus ont été traités :
+
+- Des messages d’erreurs explicites (à l'exception de la double réservation)
+
+- Utilisation d’un calendrier supporté par tous les navigateurs pour sélectionner une date de réservation
+
+- Dates de réservations affichées et saisies en français 
+
+- Données saisies restent affichées même lorsque l’on a une erreur lors de la réservation d’une oeuvre ou de la saisie d’une nouvelle oeuvre 
+
+- Une réservation peut être confirmée si elle est en attente
+
+- Les demandes de réservation se font dans un Modal, afin de proposer une interface plus agréable à l’utilisateur. La demande de vérification est implicite.
+
+- Lorsqu’il n’y a pas de réservation dans le tableau, il est affiché « Aucune donnée enregistrée »
+
+
+
+
+Les fonctionnalités supplémentaires :
+
+- Nous avons utilisé la template de back office Admin LTE qui utilise bootstrap, pour une interface plus agréable. 
+
+- La confirmation de suppression, la modification et la réservation d’une oeuvre se font au travers de modal. Même chose pour confirmation de suppression de réservation. 
+
+- L’affichage des oeuvres et des réservations se font dans un tableau, qui propose les fonctionnalités suivantes : 
+	- recherche par mot-clé dynamique (sans rechargement de la page)
+	- choix du nombre de lignes affichées par pages à l’aide d’un menu déroulant
+	- Navigation entre les pages du tableau, sans rechargement de la page web 
+
+- Affichage du nom et prénom et du statut de connexion (offline / online) de l’utilisateur
+
+- le site est entièrement responsive (vue mobile et tablette)
+
+- Menu latéral dynamique (possibilité de l’afficher ou de la masquer) (menu hamburger en vue mobile) 
+

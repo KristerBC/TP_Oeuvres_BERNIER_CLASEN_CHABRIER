@@ -6,7 +6,7 @@
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">
         <div class="form-group">
-            <input type="hidden" name="id_oeuvre" value=" /* A compléter */"/>
+
             <label class="col-md-3 control-label">Titre : </label>
             <div class="col-md-3">
                 <input type="text" name="titre"
@@ -37,7 +37,7 @@
                 </button>
                 &nbsp;
                 <button type="button" class="btn btn-default btn-primary"
-                    onclick="javascript: window.location = ' /* A compléter */';">
+                    onclick="javascript: window.location = 'oeuvres';">
                     <span class="glyphicon glyphicon-remove"></span> Annuler
                 </button>
             </div>

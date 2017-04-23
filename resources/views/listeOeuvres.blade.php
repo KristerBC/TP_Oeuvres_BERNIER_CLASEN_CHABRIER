@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-md-offset-1 col-md-3 control-label">Date range:</label>
+                  <label class="col-md-offset-1 col-md-3 control-label">Date :</label>
 
                   <div class="col-md-5 input-group">
                     <div class="input-group-addon">
@@ -181,10 +181,10 @@
   </div>
 
   <div class="col-md-6 col-md-offset-3">
-       /* A compléter */
+       
   </div>
 </div>
- /* A compléter */
+
   @endsection
 
 

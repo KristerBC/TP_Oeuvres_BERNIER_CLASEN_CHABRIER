@@ -10,7 +10,7 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Supprimer l'oeuvre ?</h4>
+          <h4 class="modal-title">Supprimer la réservation ?</h4>
       </div>
 
       <span class="replaceWithBody"></span>
@@ -55,10 +55,10 @@
     </div>
 
     <div class="col-md-6 col-md-offset-3">
-         /* A compléter */
+
     </div>
 </div>
- /* A compléter */
+
 
 @endsection
 @push('scripts')

@@ -3,12 +3,11 @@
 @section('content')
 
 {!! Form::open(['url' => 'addReservation']) !!}
- /* A compléter */
+
 <div class="col-md-12 well well-sm">
     <center><h1>{{$titreVue or ''}}</h1></center>
     <div class="form-horizontal">
         <div class="form-group">
-            <!--<input type="hidden" name="id_oeuvre" value=" /* A compléter */"/>-->
             <label class="col-md-3 control-label">Titre : </label>
             <div class="col-md-3">
                 <select class='form-control' name='id_oeuvre' required>
@@ -56,8 +55,7 @@
         </div>
     </div>
 </div>
- /* A compléter */
- /* A compléter */
+
   @endsection
 
 @push('scripts')

@@ -1,10 +1,20 @@
 @extends('admin_template')
 
 @section('content')
- /* A compléter */
+ 
 <div>
-    <h1 class="bvn"> Gestion des oeuvres et de leurs réservations </h1>
-    <p> Sur ce site, vous trouverez la liste des oeuvres disponibles, pourrez modifier et supprimez-les œuvres. De plus, vous pourrez réserver une oeuvre, ainsi qu'accéder à la liste des œuvres réservée. Vos pourer enfin confirmer et supprimer vos réservations. </p> 
+	<div class = "col-lg-offset-1 col-lg-8">
+		<h1 class="bvn"> Site de gestion des oeuvres et de leurs réservations </h1>
+    </div>
+    <div class = "col-lg-offset-2 col-lg-8">
+    	<p> Sur ce site, vous trouverez :
+    		<ul>
+    			<li>la liste des oeuvres disponibles</a></li>
+    			<li>la liste des reservations effectuées</li>
+    		</ul>
+    		Vous pourrez modifier et supprimez des œuvres. De plus, vous pourrez enregister des reservations, ainsi qu'accéder à la liste des réservations effectuées. Enfin, le site vous permet de gérer les reservations : vous pourrez les confirmer ou les supprimer 
+    	</p> 
+    </div>
 </div>
- /* A compléter */
- @endsection
+ 		
+@endsection
