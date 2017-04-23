@@ -71,13 +71,18 @@
   for(elm in data)
   {
     var res = data[elm].date_reservation.split("-");
+    var statut = "";
+    if(data[elm].statut != "Confirmée")
+    {
+      statut = '<a href="confirmReservation?id_oeuvre='+data[elm].id_oeuvre+'&date_reservation='+data[elm].date_reservation+'"><span class="glyphicon glyphicon-thumbs-up" data-toggle="tooltip" data-placement="top" title="Confirmer"></span></a>';
+    }
     arr.push(new Array(
       data[elm].titre,
       res[2].substr(0,2)+"/"+res[1]+"/"+res[0],
       data[elm].statut,
       data[elm].prenom_adherent,
       data[elm].nom_adherent,
-      '<a href="confirmReservation?id_oeuvre='+data[elm].id_oeuvre+'&date_reservation='+data[elm].date_reservation+'"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Confirmer"></span></a>',
+      statut,
       '<a class="glyphicon glyphicon-trash" data-toggle="modal" data-placement="top" title="Supprimer" href="#" data-toggle="modal" data-target="#modalDeleteReservation" data-placement="top" onclick="setSavedReservationId(' + data[elm].id_oeuvre + ', \''+data[elm].date_reservation+'\')"></a>'
     ));
   };
