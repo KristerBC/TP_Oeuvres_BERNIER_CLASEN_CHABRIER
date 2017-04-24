@@ -30,7 +30,7 @@
 </div>
 {!! Form::close() !!}
 
- @endsection
+@endsection
 @push('scripts')
 <script>
  changePage('menuButton_formLogin');

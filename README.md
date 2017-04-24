@@ -15,7 +15,9 @@ Installation :
 
 Cloner le projet puis y ajouter le dossier Vendor de Laravel. 
 Créer la base de données grâce au script .sql fournit.
-Changer les paramètres de connexion à la base de données dans le fichier .env à la racine du projet. 
+Changer les paramètres de connexion à la base de données dans le fichier .env à la racine du projet.
+
+En cas de problème d'installation voux pourrez trouver à la racine du projet un dossier "ISI2.zip", contenant tout le projet y comprit le dossier vendor, ainsi qu'une base de données déjà prête.  
 
 
 
@@ -24,7 +26,7 @@ Fonctionnalités :
 
 L'ensemble des points bonus ont été traités :
 
-- Des messages d’erreurs explicites (à l'exception de la double réservation)
+- Des messages d’erreurs explicites (à l'exception de la double réservations)
 
 - Utilisation d’un calendrier supporté par tous les navigateurs pour sélectionner une date de réservation
 
